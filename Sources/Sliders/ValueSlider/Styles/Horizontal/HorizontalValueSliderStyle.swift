@@ -1,4 +1,4 @@
-import SwiftUI
+@preconcurrency import SwiftUI
 
 public struct HorizontalValueSliderStyle<Track: View, Thumb: View>: ValueSliderStyle {
     private let track: Track
