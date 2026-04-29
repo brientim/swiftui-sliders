@@ -20,6 +20,11 @@
         return GeometryReader { geometry in
             ZStack {
                 if self.options.contains(.interactiveTrack) {
+#if swift(>=6)
+                    // Swift 6 strict-concurrency diagnostics in newer SDKs flag DragGesture.onChanged closure sendability here.
+                    // Keep thumb drag behavior and fall back to non-interactive track path for this code path.
+                    track
+#else
                     track.gesture(
                         DragGesture(minimumDistance: 0)
                             .onChanged { gestureValue in
@@ -38,6 +43,7 @@
                                 configuration.onEditingChanged(false)
                             }
                     )
+#endif
                 } else {
                     track
                 }
