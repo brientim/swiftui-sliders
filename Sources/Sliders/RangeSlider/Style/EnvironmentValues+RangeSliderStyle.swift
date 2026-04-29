@@ -12,7 +12,7 @@ public extension EnvironmentValues {
 }
 
 struct RangeSliderStyleKey: EnvironmentKey {
-    static let defaultValue: AnyRangeSliderStyle = AnyRangeSliderStyle(
+    nonisolated(unsafe) static let defaultValue: AnyRangeSliderStyle = AnyRangeSliderStyle(
         HorizontalRangeSliderStyle()
     )
 }

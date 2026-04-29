@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct PointSliderOptions: OptionSet {
+public struct PointSliderOptions: OptionSet, Sendable {
     public let rawValue: Int
 
     public static let interactiveTrack = PointSliderOptions(rawValue: 1 << 0)

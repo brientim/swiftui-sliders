@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct PointTrackConfiguration {
+public struct PointTrackConfiguration: Sendable {
     public static let defaultConfiguration = PointTrackConfiguration()
     
     public let xBounds: ClosedRange<CGFloat>

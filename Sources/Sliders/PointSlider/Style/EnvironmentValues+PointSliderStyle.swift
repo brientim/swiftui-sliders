@@ -12,7 +12,7 @@ public extension EnvironmentValues {
 }
 
 struct PointSliderStyleKey: EnvironmentKey {
-    static let defaultValue: AnyPointSliderStyle = AnyPointSliderStyle(
+    nonisolated(unsafe) static let defaultValue: AnyPointSliderStyle = AnyPointSliderStyle(
         RectangularPointSliderStyle()
     )
 }

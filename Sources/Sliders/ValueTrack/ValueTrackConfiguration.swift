@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct ValueTrackConfiguration {
+public struct ValueTrackConfiguration: Sendable {
     public static let defaultConfiguration = ValueTrackConfiguration()
     
     public let bounds: ClosedRange<CGFloat>
