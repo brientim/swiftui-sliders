@@ -48,6 +48,23 @@
                     track
                 }
 
+                #if swift(>=6)
+                ZStack {
+                    self.thumb
+                        .frame(width: self.thumbSize.width, height: self.thumbSize.height)
+                }
+                .frame(minWidth: self.thumbInteractiveSize.width, minHeight: self.thumbInteractiveSize.height)
+                .position(
+                    x: distanceFrom(
+                        value: configuration.value.wrappedValue,
+                        availableDistance: geometry.size.width,
+                        bounds: configuration.bounds,
+                        leadingOffset: self.thumbSize.width / 2,
+                        trailingOffset: self.thumbSize.width / 2
+                    ),
+                    y: geometry.size.height / 2
+                )
+                #else
                 ZStack {
                     self.thumb
                         .frame(width: self.thumbSize.width, height: self.thumbSize.height)
@@ -94,6 +111,7 @@
                             configuration.onEditingChanged(false)
                         }
                 )
+                #endif
             }
             .frame(height: geometry.size.height)
         }
