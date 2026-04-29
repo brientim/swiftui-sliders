@@ -1,4 +1,4 @@
-import SwiftUI
+@preconcurrency import SwiftUI
 
 public struct HorizontalRangeSliderStyle<Track: View, LowerThumb: View, UpperThumb: View>: RangeSliderStyle {
     private let track: Track
