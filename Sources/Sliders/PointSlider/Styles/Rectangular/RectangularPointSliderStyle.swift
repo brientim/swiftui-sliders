@@ -22,6 +22,9 @@ public struct RectangularPointSliderStyle<Track: View, Thumb: View>: PointSlider
         return GeometryReader { geometry in
             ZStack {
                 if self.options.contains(.interactiveTrack) {
+#if swift(>=6)
+                    track
+#else
                     track.gesture(
                         DragGesture(minimumDistance: 0)
                             .onChanged { gestureValue in
@@ -52,6 +55,7 @@ public struct RectangularPointSliderStyle<Track: View, Thumb: View>: PointSlider
                                 configuration.onEditingChanged(false)
                             }
                     )
+#endif
                 } else {
                     track
                 }
