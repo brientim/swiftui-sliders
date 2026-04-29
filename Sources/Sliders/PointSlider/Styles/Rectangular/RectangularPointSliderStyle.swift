@@ -1,4 +1,4 @@
-import SwiftUI
+@preconcurrency import SwiftUI
 
 public struct RectangularPointSliderStyle<Track: View, Thumb: View>: PointSliderStyle {
     private let track: Track
