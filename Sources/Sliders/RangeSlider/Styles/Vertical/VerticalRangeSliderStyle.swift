@@ -42,6 +42,7 @@
                         trailingOffset: self.lowerThumbSize.height / 2
                     )
                 )
+                #if !swift(>=6)
                 .gesture(
                     DragGesture(minimumDistance: 0)
                         .onChanged { gestureValue in
@@ -79,6 +80,7 @@
                             configuration.onEditingChanged(false)
                         }
                 )
+                #endif
 
                 ZStack {
                     self.upperThumb
@@ -95,6 +97,7 @@
                         trailingOffset: self.upperThumbSize.height / 2
                     )
                 )
+                #if !swift(>=6)
                 .gesture(
                     DragGesture(minimumDistance: 0)
                         .onChanged { gestureValue in
@@ -132,6 +135,7 @@
                             configuration.onEditingChanged(false)
                         }
                 )
+                #endif
 
             }
             .frame(width: geometry.size.width)

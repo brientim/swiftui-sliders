@@ -43,6 +43,7 @@
                     ),
                     y: geometry.size.height / 2
                 )
+                #if !swift(>=6)
                 .gesture(
                     DragGesture(minimumDistance: 0)
                         .onChanged { gestureValue in
@@ -81,6 +82,7 @@
                             configuration.onEditingChanged(false)
                         }
                 )
+                #endif
 
                 ZStack {
                     self.upperThumb
@@ -97,6 +99,7 @@
                     ),
                     y: geometry.size.height / 2
                 )
+                #if !swift(>=6)
                 .gesture(
                     DragGesture(minimumDistance: 0)
                         .onChanged { gestureValue in
@@ -135,6 +138,7 @@
                             configuration.onEditingChanged(false)
                         }
                 )
+                #endif
 
             }
             .frame(height: geometry.size.height)
